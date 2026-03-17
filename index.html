@@ -1,0 +1,556 @@
+<!doctype html>
+<html lang="en" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Love Coupons</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;family=Lato:wght@300;400&amp;display=swap" rel="stylesheet">
+  <style>
+    @page {
+      size: letter portrait;
+      margin: 0;
+    }
+    
+    @media print {
+  .overflow-auto { overflow: visible !important; }
+  html, body, .h-full { height: auto !important; }
+  .flex-1 { flex: none !important; }
+
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+    
+    .font-display {
+      font-family: 'Playfair Display', Georgia, serif;
+    }
+    
+    .font-body {
+      font-family: 'Lato', Arial, sans-serif;
+    }
+    
+    .ticket-shape {
+      position: relative;
+      background: white;
+      border: 6px solid;
+    }
+    
+    .ticket-notch {
+      position: absolute;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+      background-color: white;
+      border: 6px solid;
+    }
+    
+    .notch-left {
+      left: -14px;
+      clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%);
+    }
+    
+    .notch-right {
+      right: -14px;
+      clip-path: polygon(0% 0%, 50% 0%, 50% 100%, 0% 100%);
+    }
+    
+    .stub-separator {
+      border-right: 2px dashed rgba(100, 100, 100, 0.35);
+    }
+    
+    .dotted-line {
+      border-top: 2px dashed rgba(100, 100, 100, 0.25);
+    }
+    
+    .valid-text {
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      transform: rotate(180deg);
+    }
+
+    .page-break {
+      break-after: page;
+    }
+
+    .simple-rect {
+      border-radius: 12px;
+      border: 6px solid;
+      background: white;
+    }
+  </style>
+  <style>body { box-sizing: border-box; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full font-body bg-white">
+  <div class="w-full h-full flex flex-col items-center overflow-auto"><!-- PAGE 1 -->
+   <div class="w-full max-w-[5.67in] bg-white p-6 flex flex-col gap-0 mx-auto" style="aspect-ratio: 8.5/11;"><!-- Coupon 1 - Mint (Simple Rectangle) -->
+    <div class="flex-1 flex flex-col justify-center pb-3">
+     <div class="simple-rect" style="border-color: #CFE3DA; min-height: 100px;">
+      <div class="w-full h-full p-6 flex flex-col items-center justify-center text-center" style="background-color: white;">
+       <h2 id="title1" class="font-display text-xl text-gray-800 mb-2 leading-tight">CUPONERA</h2>
+       <p class="text-[7.5px] text-gray-600 font-light leading-snug">Cuponera para la cumpleañera mas bonita que existe</p>
+      </div>
+     </div>
+    </div>
+    <div class="flex items-center py-3 px-0">
+     <svg width="16" height="16" viewbox="0 0 24 24" fill="none" stroke="#8B8680" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mr-2"><circle cx="6" cy="6" r="2.5" /><circle cx="6" cy="18" r="2.5" /><line x1="20" y1="4" x2="8.5" y2="15.5" /><line x1="14.5" y1="14.5" x2="20" y2="20" />
+     </svg>
+     <div class="flex-1 dotted-line"></div>
+    </div><!-- Coupon 2 - Lilac (Simple Rectangle) -->
+    <div class="flex-1 flex flex-col justify-center py-3">
+     <div class="simple-rect" style="border-color: #D8C9F2; min-height: 100px;">
+      <div class="w-full h-full p-6 flex flex-col items-center justify-center text-center" style="background-color: white;">
+       <h2 id="title2" class="font-display text-xl text-gray-800 mb-2 leading-tight">REGLAS</h2>
+       <p class="text-[7.5px] text-gray-600 font-light leading-snug">Esta cuponera es válida durante un año a partir de su entrega. Para hacer válido cualquier cupón, este debe ser legible. El cupón comodín puede utilizarse para cualquier actividad acordada. Los cupones de comida requieren al menos una semana entre su uso y la entrega.</p>
+      </div>
+     </div>
+    </div>
+    <div class="flex items-center py-3 px-0">
+     <svg width="16" height="16" viewbox="0 0 24 24" fill="none" stroke="#8B8680" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mr-2"><circle cx="6" cy="6" r="2.5" /><circle cx="6" cy="18" r="2.5" /><line x1="20" y1="4" x2="8.5" y2="15.5" /><line x1="14.5" y1="14.5" x2="20" y2="20" />
+     </svg>
+     <div class="flex-1 dotted-line"></div>
+    </div><!-- Coupon 3 - Pink -->
+    <div class="flex-1 flex flex-col justify-center pt-3">
+     <div class="relative">
+      <div class="ticket-shape relative flex overflow-visible" style="min-height: 140px; border-color: #F4BFC6; border-radius: 12px;">
+       <div class="ticket-notch notch-left" style="border-color: #F4BFC6;"></div>
+       <div class="ticket-notch notch-right" style="border-color: #F4BFC6;"></div>
+       <div class="w-20 flex-shrink-0 stub-separator flex flex-col items-center justify-center px-2 py-4" style="background-color: white; border-right-color: #F4BFC6;">
+        <div class="valid-text text-center"><span class="text-[9px] font-bold tracking-wider text-gray-700 block mb-1" style="letter-spacing: 0.08em;">Valido</span> <span class="text-[9px] font-bold tracking-wider text-gray-700 block mb-3" style="letter-spacing: 0.08em;">Hasta</span> <span id="date3" class="text-[8px] font-light text-gray-600 block leading-tight">Feb 14<br>
+          2027</span>
+        </div>
+       </div>
+       <div class="flex-1 p-4 flex items-center gap-4" style="background-color: white;">
+        <div class="flex-shrink-0 pt-1">
+         <circle cx="28" cy="9" r="3" /><circle cx="31" cy="11.5" r="3" />
+         </svg>
+        </div>
+        <div class="flex-1 pr-2">
+         <h2 id="title3" class="font-display text-lg text-gray-800 mb-1.5 leading-tight">Cena romántica</h2>
+         <p class="text-[7.5px] text-gray-600 font-light leading-snug">"Cupón valido por una cena romantica donde tú elijas"</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="w-full" style="page-break-after: always;"></div><!-- PAGE 2 -->
+   <div class="w-full max-w-[5.67in] bg-white p-6 flex flex-col gap-0 mx-auto" style="aspect-ratio: 8.5/11;"><!-- Coupon 4 - Peach -->
+    <div class="flex-1 flex flex-col justify-center pb-3">
+     <div class="relative">
+      <div class="ticket-shape relative flex overflow-visible" style="min-height: 140px; border-color: #F5D5C8; border-radius: 12px;">
+       <div class="ticket-notch notch-left" style="border-color: #F5D5C8;"></div>
+       <div class="ticket-notch notch-right" style="border-color: #F5D5C8;"></div>
+       <div class="w-20 flex-shrink-0 stub-separator flex flex-col items-center justify-center px-2 py-4" style="background-color: white; border-right-color: #F5D5C8;">
+        <div class="valid-text text-center"><span class="text-[9px] font-bold tracking-wider text-gray-700 block mb-1" style="letter-spacing: 0.08em;">Valido</span> <span class="text-[9px] font-bold tracking-wider text-gray-700 block mb-3" style="letter-spacing: 0.08em;">Hasta</span> <span id="date4" class="text-[8px] font-light text-gray-600 block leading-tight">Feb 14<br>
+          2027</span>
+        </div>
+       </div>
+       <div class="flex-1 p-4 flex items-center gap-4" style="background-color: white;">
+        <div class="flex-shrink-0 pt-1">
+         
+         </svg>
+        </div>
+        <div class="flex-1 pr-2">
+         <h2 id="title4" class="font-display text-lg text-gray-800 mb-1.5 leading-tight">Hotcakes</h2>
+         <p class="text-[7.5px] text-gray-600 font-light leading-snug">"Este cupón es valido por un par de hotcakes hechos por mi"</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="flex items-center py-3 px-0">
+     <svg width="16" height="16" viewbox="0 0 24 24" fill="none" stroke="#8B8680" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mr-2"><circle cx="6" cy="6" r="2.5" /><circle cx="6" cy="18" r="2.5" /><line x1="20" y1="4" x2="8.5" y2="15.5" /><line x1="14.5" y1="14.5" x2="20" y2="20" />
+     </svg>
+     <div class="flex-1 dotted-line"></div>
+    </div><!-- Coupon 5 - Sage Green -->
+    <div class="flex-1 flex flex-col justify-center py-3">
+     <div class="relative">
+      <div class="ticket-shape relative flex overflow-visible" style="min-height: 140px; border-color: #C8DDD1; border-radius: 12px;">
+       <div class="ticket-notch notch-left" style="border-color: #C8DDD1;"></div>
+       <div class="ticket-notch notch-right" style="border-color: #C8DDD1;"></div>
+       <div class="w-20 flex-shrink-0 stub-separator flex flex-col items-center justify-center px-2 py-4" style="background-color: white; border-right-color: #C8DDD1;">
+        <div class="valid-text text-center"><span class="text-[9px] font-bold tracking-wider text-gray-700 block mb-1" style="letter-spacing: 0.08em;">Valido</span> <span class="text-[9px] font-bold tracking-wider text-gray-700 block mb-3" style="letter-spacing: 0.08em;">Hasta</span> <span id="date5" class="text-[8px] font-light text-gray-600 block leading-tight">Feb 14<br>
+          2027</span>
+        </div>
+       </div>
+       <div class="flex-1 p-4 flex items-center gap-4" style="background-color: white;">
+        <div class="flex-shrink-0 pt-1">
+         
+         </svg>
+        </div>
+        <div class="flex-1 pr-2">
+         <h2 id="title5" class="font-display text-lg text-gray-800 mb-1.5 leading-tight">Comodín</h2>
+         <p class="text-[7.5px] text-gray-600 font-light leading-snug">"Cupón valido por cualquier cosa que quieras"</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="flex items-center py-3 px-0">
+     <svg width="16" height="16" viewbox="0 0 24 24" fill="none" stroke="#8B8680" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mr-2"><circle cx="6" cy="6" r="2.5" /><circle cx="6" cy="18" r="2.5" /><line x1="20" y1="4" x2="8.5" y2="15.5" /><line x1="14.5" y1="14.5" x2="20" y2="20" />
+     </svg>
+     <div class="flex-1 dotted-line"></div>
+    </div><!-- Coupon 6 - Lavender -->
+    <div class="flex-1 flex flex-col justify-center pt-3">
+     <div class="relative">
+      <div class="ticket-shape relative flex overflow-visible" style="min-height: 140px; border-color: #E5D9F2; border-radius: 12px;">
+       <div class="ticket-notch notch-left" style="border-color: #E5D9F2;"></div>
+       <div class="ticket-notch notch-right" style="border-color: #E5D9F2;"></div>
+       <div class="w-20 flex-shrink-0 stub-separator flex flex-col items-center justify-center px-2 py-4" style="background-color: white; border-right-color: #E5D9F2;">
+        <div class="valid-text text-center"><span class="text-[9px] font-bold tracking-wider text-gray-700 block mb-1" style="letter-spacing: 0.08em;">Valido</span> <span class="text-[9px] font-bold tracking-wider text-gray-700 block mb-3" style="letter-spacing: 0.08em;">Hasta</span> <span id="date6" class="text-[8px] font-light text-gray-600 block leading-tight">Feb 14<br>
+          2027</span>
+        </div>
+       </div>
+       <div class="flex-1 p-4 flex items-center gap-4" style="background-color: white;">
+        <div class="flex-shrink-0 pt-1">
+         
+         </svg>
+        </div>
+        <div class="flex-1 pr-2">
+
+         <h2 id="title6" class="font-display text-lg text-gray-800 mb-1.5 leading-tight">Galletas</h2>
+         <p class="text-[7.5px] text-gray-600 font-light leading-snug">"Este cupón es valido por unas galletitas hechas por mi"</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="w-full" style="page-break-after: always;"></div><!-- PAGE 3 -->
+   <div class="w-full max-w-[5.67in] bg-white p-6 flex flex-col gap-0 mx-auto" style="aspect-ratio: 8.5/11;"><!-- Coupon 7 - Coral -->
+    <div class="flex-1 flex flex-col justify-center pb-3">
+     <div class="relative">
+      <div class="ticket-shape relative flex overflow-visible" style="min-height: 140px; border-color: #F0C5BD; border-radius: 12px;">
+       <div class="ticket-notch notch-left" style="border-color: #F0C5BD;"></div>
+       <div class="ticket-notch notch-right" style="border-color: #F0C5BD;"></div>
+       <div class="w-20 flex-shrink-0 stub-separator flex flex-col items-center justify-center px-2 py-4" style="background-color: white; border-right-color: #F0C5BD;">
+        <div class="valid-text text-center"><span class="text-[9px] font-bold tracking-wider text-gray-700 block mb-1" style="letter-spacing: 0.08em;">Valido</span> <span class="text-[9px] font-bold tracking-wider text-gray-700 block mb-3" style="letter-spacing: 0.08em;">Hasta</span> <span id="date7" class="text-[8px] font-light text-gray-600 block leading-tight">Feb 14<br>
+          2027</span>
+        </div>
+       </div>
+       <div class="flex-1 p-4 flex items-center gap-4" style="background-color: white;">
+        <div class="flex-shrink-0 pt-1">
+         
+         </svg>
+        </div>
+        <div class="flex-1 pr-2">
+
+         <h2 id="title7" class="font-display text-lg text-gray-800 mb-1.5 leading-tight">Ver la serie que tú quieras</h2>
+         <p class="text-[7.5px] text-gray-600 font-light leading-snug">"Cupón valido para ver completa la serie que tu elijas"</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="flex items-center py-3 px-0">
+     <svg width="16" height="16" viewbox="0 0 24 24" fill="none" stroke="#8B8680" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mr-2"><circle cx="6" cy="6" r="2.5" /><circle cx="6" cy="18" r="2.5" /><line x1="20" y1="4" x2="8.5" y2="15.5" /><line x1="14.5" y1="14.5" x2="20" y2="20" />
+     </svg>
+     <div class="flex-1 dotted-line"></div>
+    </div><!-- Coupon 8 - Teal -->
+    <div class="flex-1 flex flex-col justify-center py-3">
+     <div class="relative">
+      <div class="ticket-shape relative flex overflow-visible" style="min-height: 140px; border-color: #B8E0DC; border-radius: 12px;">
+       <div class="ticket-notch notch-left" style="border-color: #B8E0DC;"></div>
+       <div class="ticket-notch notch-right" style="border-color: #B8E0DC;"></div>
+       <div class="w-20 flex-shrink-0 stub-separator flex flex-col items-center justify-center px-2 py-4" style="background-color: white; border-right-color: #B8E0DC;">
+        <div class="valid-text text-center"><span class="text-[9px] font-bold tracking-wider text-gray-700 block mb-1" style="letter-spacing: 0.08em;">Valido</span> <span class="text-[9px] font-bold tracking-wider text-gray-700 block mb-3" style="letter-spacing: 0.08em;">Hasta</span> <span id="date8" class="text-[8px] font-light text-gray-600 block leading-tight">Feb 14<br>
+          2027</span>
+        </div>
+       </div>
+       <div class="flex-1 p-4 flex items-center gap-4" style="background-color: white;">
+        <div class="flex-shrink-0 pt-1">
+         
+         </svg>
+        </div>
+        <div class="flex-1 pr-2">
+
+         <h2 id="title8" class="font-display text-lg text-gray-800 mb-1.5 leading-tight">Cocinar juntos</h2>
+         <p class="text-[7.5px] text-gray-600 font-light leading-snug">"Cupón valido por un día cocinando una deliciosa comida juntos"</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="flex items-center py-3 px-0">
+     <svg width="16" height="16" viewbox="0 0 24 24" fill="none" stroke="#8B8680" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mr-2"><circle cx="6" cy="6" r="2.5" /><circle cx="6" cy="18" r="2.5" /><line x1="20" y1="4" x2="8.5" y2="15.5" /><line x1="14.5" y1="14.5" x2="20" y2="20" />
+     </svg>
+     <div class="flex-1 dotted-line"></div>
+    </div><!-- Coupon 9 - Blush -->
+    <div class="flex-1 flex flex-col justify-center pt-3">
+     <div class="relative">
+      <div class="ticket-shape relative flex overflow-visible" style="min-height: 140px; border-color: #F5D8DD; border-radius: 12px;">
+       <div class="ticket-notch notch-left" style="border-color: #F5D8DD;"></div>
+       <div class="ticket-notch notch-right" style="border-color: #F5D8DD;"></div>
+       <div class="w-20 flex-shrink-0 stub-separator flex flex-col items-center justify-center px-2 py-4" style="background-color: white; border-right-color: #F5D8DD;">
+        <div class="valid-text text-center"><span class="text-[9px] font-bold tracking-wider text-gray-700 block mb-1" style="letter-spacing: 0.08em;">Valido</span> <span class="text-[9px] font-bold tracking-wider text-gray-700 block mb-3" style="letter-spacing: 0.08em;">Hasta</span> <span id="date9" class="text-[8px] font-light text-gray-600 block leading-tight">Feb 14<br>
+          2027</span>
+        </div>
+       </div>
+       <div class="flex-1 p-4 flex items-center gap-4" style="background-color: white;">
+        <div class="flex-shrink-0 pt-1">
+         
+         </svg>
+        </div>
+        <div class="flex-1 pr-2">
+
+         <h2 id="title9" class="font-display text-lg text-gray-800 mb-1.5 leading-tight">Pay de limón</h2>
+         <p class="text-[7.5px] text-gray-600 font-light leading-snug">"Cupón valido por un delicioso pay de limón"</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="w-full" style="page-break-after: always;"></div><!-- PAGE 4 -->
+   <div class="w-full max-w-[5.67in] bg-white p-6 flex flex-col gap-0 mx-auto" style="aspect-ratio: 8.5/11;"><!-- Coupon 10 - Cream -->
+    <div class="flex-1 flex flex-col justify-center pb-3">
+     <div class="relative">
+      <div class="ticket-shape relative flex overflow-visible" style="min-height: 140px; border-color: #E8DCC8; border-radius: 12px;">
+       <div class="ticket-notch notch-left" style="border-color: #E8DCC8;"></div>
+       <div class="ticket-notch notch-right" style="border-color: #E8DCC8;"></div>
+       <div class="w-20 flex-shrink-0 stub-separator flex flex-col items-center justify-center px-2 py-4" style="background-color: white; border-right-color: #E8DCC8;">
+        <div class="valid-text text-center"><span class="text-[9px] font-bold tracking-wider text-gray-700 block mb-1" style="letter-spacing: 0.08em;">Valido</span> <span class="text-[9px] font-bold tracking-wider text-gray-700 block mb-3" style="letter-spacing: 0.08em;">Hasta</span> <span id="date10" class="text-[8px] font-light text-gray-600 block leading-tight">Feb 14<br>
+          2027</span>
+        </div>
+       </div>
+       <div class="flex-1 p-4 flex items-center gap-4" style="background-color: white;">
+        <div class="flex-shrink-0 pt-1">
+         
+         </svg>
+        </div>
+        <div class="flex-1 pr-2">
+
+         <h2 id="title10" class="font-display text-lg text-gray-800 mb-1.5 leading-tight">Elejir salida</h2>
+         <p class="text-[7.5px] text-gray-600 font-light leading-snug">"Cupón valido por una salida a donde sea que tu elikas"</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="flex items-center py-3 px-0">
+     <svg width="16" height="16" viewbox="0 0 24 24" fill="none" stroke="#8B8680" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mr-2"><circle cx="6" cy="6" r="2.5" /><circle cx="6" cy="18" r="2.5" /><line x1="20" y1="4" x2="8.5" y2="15.5" /><line x1="14.5" y1="14.5" x2="20" y2="20" />
+     </svg>
+     <div class="flex-1 dotted-line"></div>
+    </div><!-- Coupon 11 - Champagne -->
+    <div class="flex-1 flex flex-col justify-center py-3">
+     <div class="relative">
+      <div class="ticket-shape relative flex overflow-visible" style="min-height: 140px; border-color: #F0E8D8; border-radius: 12px;">
+       <div class="ticket-notch notch-left" style="border-color: #F0E8D8;"></div>
+       <div class="ticket-notch notch-right" style="border-color: #F0E8D8;"></div>
+       <div class="w-20 flex-shrink-0 stub-separator flex flex-col items-center justify-center px-2 py-4" style="background-color: white; border-right-color: #F0E8D8;">
+        <div class="valid-text text-center"><span class="text-[9px] font-bold tracking-wider text-gray-700 block mb-1" style="letter-spacing: 0.08em;">Valido</span> <span class="text-[9px] font-bold tracking-wider text-gray-700 block mb-3" style="letter-spacing: 0.08em;">Hasta</span> <span id="date11" class="text-[8px] font-light text-gray-600 block leading-tight">Feb 14<br>
+          2027</span>
+        </div>
+       </div>
+       <div class="flex-1 p-4 flex items-center gap-4" style="background-color: white;">
+        <div class="flex-shrink-0 pt-1">
+         
+         </svg>
+        </div>
+        <div class="flex-1 pr-2">
+
+         <h2 id="title11" class="font-display text-lg text-gray-800 mb-1.5 leading-tight">Sesión de fotos</h2>
+         <p class="text-[7.5px] text-gray-600 font-light leading-snug">"Cupón valido por una sesión de fotos"</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="flex items-center py-3 px-0">
+     <svg width="16" height="16" viewbox="0 0 24 24" fill="none" stroke="#8B8680" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mr-2"><circle cx="6" cy="6" r="2.5" /><circle cx="6" cy="18" r="2.5" /><line x1="20" y1="4" x2="8.5" y2="15.5" /><line x1="14.5" y1="14.5" x2="20" y2="20" />
+     </svg>
+     <div class="flex-1 dotted-line"></div>
+    </div><!-- Coupon 12 - Mint Green -->
+    <div class="flex-1 flex flex-col justify-center pt-3">
+     <div class="relative">
+      <div class="ticket-shape relative flex overflow-visible" style="min-height: 140px; border-color: #D4E8D8; border-radius: 12px;">
+       <div class="ticket-notch notch-left" style="border-color: #D4E8D8;"></div>
+       <div class="ticket-notch notch-right" style="border-color: #D4E8D8;"></div>
+       <div class="w-20 flex-shrink-0 stub-separator flex flex-col items-center justify-center px-2 py-4" style="background-color: white; border-right-color: #D4E8D8;">
+        <div class="valid-text text-center"><span class="text-[9px] font-bold tracking-wider text-gray-700 block mb-1" style="letter-spacing: 0.08em;">Valido</span> <span class="text-[9px] font-bold tracking-wider text-gray-700 block mb-3" style="letter-spacing: 0.08em;">Hasta</span> <span id="date12" class="text-[8px] font-light text-gray-600 block leading-tight">Feb 14<br>
+          2027</span>
+        </div>
+       </div>
+       <div class="flex-1 p-4 flex items-center gap-4" style="background-color: white;">
+        <div class="flex-shrink-0 pt-1">
+        
+         </svg>
+        </div>
+        <div class="flex-1 pr-2">
+
+         <h2 id="title12" class="font-display text-lg text-gray-800 mb-1.5 leading-tight">Baile juntos</h2>
+         <p class="text-[7.5px] text-gray-600 font-light leading-snug">"Cupón valido por un baile juntos, tú eliges la canción"</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="w-full" style="page-break-after: always;"></div><!-- PAGE 5 -->
+   <div class="w-full max-w-[5.67in] bg-white p-6 flex flex-col gap-0 mx-auto" style="aspect-ratio: 8.5/11;"><!-- Coupon 13 - Rose -->
+    <div class="flex-1 flex flex-col justify-center pb-3">
+     <div class="relative">
+      <div class="ticket-shape relative flex overflow-visible" style="min-height: 140px; border-color: #E8B4C0; border-radius: 12px;">
+       <div class="ticket-notch notch-left" style="border-color: #E8B4C0;"></div>
+       <div class="ticket-notch notch-right" style="border-color: #E8B4C0;"></div>
+       <div class="w-20 flex-shrink-0 stub-separator flex flex-col items-center justify-center px-2 py-4" style="background-color: white; border-right-color: #E8B4C0;">
+        <div class="valid-text text-center"><span class="text-[9px] font-bold tracking-wider text-gray-700 block mb-1" style="letter-spacing: 0.08em;">Valido</span> <span class="text-[9px] font-bold tracking-wider text-gray-700 block mb-3" style="letter-spacing: 0.08em;">Hasta</span> <span id="date13" class="text-[8px] font-light text-gray-600 block leading-tight">Feb 14<br>
+          2027</span>
+        </div>
+       </div>
+       <div class="flex-1 p-4 flex items-center gap-4" style="background-color: white;">
+        <div class="flex-shrink-0 pt-1">
+         
+         </svg>
+        </div>
+        <div class="flex-1 pr-2">
+
+         <h2 id="title13" class="font-display text-lg text-gray-800 mb-1.5 leading-tight">Un besito</h2>
+         <p class="text-[7.5px] text-gray-600 font-light leading-snug">"Cupón valido por un besito o los que tu elijas "</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="flex items-center py-3 px-0">
+     <svg width="16" height="16" viewbox="0 0 24 24" fill="none" stroke="#8B8680" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mr-2"><circle cx="6" cy="6" r="2.5" /><circle cx="6" cy="18" r="2.5" /><line x1="20" y1="4" x2="8.5" y2="15.5" /><line x1="14.5" y1="14.5" x2="20" y2="20" />
+     </svg>
+     <div class="flex-1 dotted-line"></div>
+    </div><!-- Coupon 14 - Soft Gold -->
+    <div class="flex-1 flex flex-col justify-center pt-3">
+     <div class="relative">
+      <div class="ticket-shape relative flex overflow-visible" style="min-height: 140px; border-color: #E8DCC4; border-radius: 12px;">
+       <div class="ticket-notch notch-left" style="border-color: #E8DCC4;"></div>
+       <div class="ticket-notch notch-right" style="border-color: #E8DCC4;"></div>
+       <div class="w-20 flex-shrink-0 stub-separator flex flex-col items-center justify-center px-2 py-4" style="background-color: white; border-right-color: #E8DCC4;">
+        <div class="valid-text text-center"><span class="text-[9px] font-bold tracking-wider text-gray-700 block mb-1" style="letter-spacing: 0.08em;">Valido</span> <span class="text-[9px] font-bold tracking-wider text-gray-700 block mb-3" style="letter-spacing: 0.08em;">Hasta</span> <span id="date14" class="text-[8px] font-light text-gray-600 block leading-tight">Feb 14<br>
+          2027</span>
+        </div>
+       </div>
+       <div class="flex-1 p-4 flex items-center gap-4" style="background-color: white;">
+        <div class="flex-shrink-0 pt-1">
+         
+         </svg>
+        </div>
+        <div class="flex-1 pr-2">
+  
+         <h2 id="title14" class="font-display text-lg text-gray-800 mb-1.5 leading-tight">Platica profunda</h2>
+         <p class="text-[7.5px] text-gray-600 font-light leading-snug">"Cupón valido por tener una platica larga y profunda juntos"</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <script>
+    const defaultConfig = {
+      coupon1_title: 'CUPONERA',
+      coupon2_title: 'REGLAS',
+      coupon3_title: 'Romantic Dinner',
+      coupon3_date: 'Aug 24\n2024',
+      coupon4_title: 'Spa Day',
+      coupon4_date: 'Sep 10\n2024',
+      coupon5_title: 'Adventure Walk',
+      coupon5_date: 'Sep 15\n2024',
+      coupon6_title: 'Stargazing Night',
+      coupon6_date: 'Sep 30\n2024',
+      coupon7_title: 'Game Night',
+      coupon7_date: 'Oct 05\n2024',
+      coupon8_title: 'Cooking Together',
+      coupon8_date: 'Oct 12\n2024',
+      coupon9_title: 'Secret Location',
+      coupon9_date: 'Oct 20\n2024',
+      coupon10_title: 'Love Letter',
+      coupon10_date: 'Nov 01\n2024',
+      coupon11_title: 'Celebration Toast',
+      coupon11_date: 'Nov 10\n2024',
+      coupon12_title: 'Extra Time Together',
+      coupon12_date: 'Nov 30\n2024',
+      coupon13_title: 'Dance Together',
+      coupon13_date: 'Dec 15\n2024',
+      coupon14_title: 'Memory Lane',
+      coupon14_date: 'Dec 31\n2024',
+      background_color: '#F6F2EC',
+      text_color: '#505050',
+      font_family: 'Playfair Display'
+    };
+
+    async function onConfigChange(config) {
+      for (let i = 1; i <= 14; i++) {
+        const titleEl = document.getElementById(`title${i}`);
+        if (titleEl) titleEl.textContent = config[`coupon${i}_title`] || defaultConfig[`coupon${i}_title`];
+        
+        const dateEl = document.getElementById(`date${i}`);
+        if (dateEl && config[`coupon${i}_date`]) {
+          dateEl.textContent = config[`coupon${i}_date`] || defaultConfig[`coupon${i}_date`];
+        }
+      }
+
+      const fontFamily = config.font_family || defaultConfig.font_family;
+      document.querySelectorAll('.font-display').forEach(el => {
+        el.style.fontFamily = `${fontFamily}, Georgia, serif`;
+      });
+
+      document.body.style.backgroundColor = config.background_color || defaultConfig.background_color;
+    }
+
+    function mapToCapabilities(config) {
+      return {
+        recolorables: [
+          {
+            get: () => config.background_color || defaultConfig.background_color,
+            set: (value) => {
+              config.background_color = value;
+              window.elementSdk.setConfig({ background_color: value });
+            }
+          },
+          {
+            get: () => config.text_color || defaultConfig.text_color,
+            set: (value) => {
+              config.text_color = value;
+              window.elementSdk.setConfig({ text_color: value });
+            }
+          }
+        ],
+        borderables: [],
+        fontEditable: {
+          get: () => config.font_family || defaultConfig.font_family,
+          set: (value) => {
+            config.font_family = value;
+            window.elementSdk.setConfig({ font_family: value });
+          }
+        },
+        fontSizeable: undefined
+      };
+    }
+
+    function mapToEditPanelValues(config) {
+      const map = new Map();
+      map.set('coupon1_title', config.coupon1_title || defaultConfig.coupon1_title);
+      map.set('coupon2_title', config.coupon2_title || defaultConfig.coupon2_title);
+      for (let i = 3; i <= 14; i++) {
+        map.set(`coupon${i}_title`, config[`coupon${i}_title`] || defaultConfig[`coupon${i}_title`]);
+        map.set(`coupon${i}_date`, config[`coupon${i}_date`] || defaultConfig[`coupon${i}_date`]);
+      }
+      return map;
+    }
+
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities,
+        mapToEditPanelValues
+      });
+    }
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9d106784e5e69a5d',t:'MTc3MTYxNTY3OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

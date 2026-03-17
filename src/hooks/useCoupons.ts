@@ -56,14 +56,7 @@ export function useCoupons() {
 
   useEffect(() => {
     fetchCoupons()
-
-    const channel = supabase
-      .channel('coupons-realtime')
-      .on('postgres_changes', { event: '*', schema: 'public', table: 'coupons' }, fetchCoupons)
-      .subscribe()
-
-    return () => { supabase.removeChannel(channel) }
-  }, [fetchCoupons, supabase])
+  }, [fetchCoupons])
 
   const createCoupon = async (data: CreateInput) => {
     const { data: { user } } = await supabase.auth.getUser()
@@ -78,6 +71,7 @@ export function useCoupons() {
       border_color: color,
       owner: user?.id ?? null,
     })
+    if (!error) await fetchCoupons()
     return { error }
   }
 
@@ -100,11 +94,7 @@ export function useCoupons() {
       used: isUsed,
       used_at: isUsed ? new Date().toISOString() : null,
     }).eq('id', coupon.id)
-    if (error) {
-      console.error('toggleUsed error:', error.message)
-    } else {
-      await fetchCoupons()
-    }
+    if (!error) await fetchCoupons()
     return { error }
   }
 

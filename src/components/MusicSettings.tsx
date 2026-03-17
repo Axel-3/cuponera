@@ -1,23 +1,30 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { useSettings } from '@/hooks/useSettings'
 
 export default function MusicSettings() {
-  const { settings, saveSetting } = useSettings()
-  const [url, setUrl] = useState(settings.song_url)
-  const [title, setTitle] = useState(settings.song_title)
+  const { settings, loading, saveMusic } = useSettings()
+  const [url, setUrl] = useState('')
+  const [title, setTitle] = useState('')
   const [saving, setSaving] = useState(false)
   const [saved, setSaved] = useState(false)
 
+  // Sync local state once settings load
+  useEffect(() => {
+    if (!loading) {
+      setUrl(settings.song_url)
+      setTitle(settings.song_title)
+    }
+  }, [loading, settings.song_url, settings.song_title])
+
   const handleSave = async () => {
     setSaving(true)
-    await saveSetting('song_url', url)
-    await saveSetting('song_title', title)
+    await saveMusic(url, title)
     setSaving(false)
     setSaved(true)
-    setTimeout(() => setSaved(false), 2000)
+    setTimeout(() => setSaved(false), 2500)
   }
 
   const inputClass =
@@ -44,18 +51,25 @@ export default function MusicSettings() {
 
       <div>
         <label className="block text-sm font-medium text-gray-700 mb-1">
-          URL del archivo de audio (MP3)
+          URL del archivo MP3
         </label>
         <input
           className={inputClass}
           value={url}
           onChange={(e) => setUrl(e.target.value)}
-          placeholder="https://... enlace directo a un archivo .mp3"
+          placeholder="https://...supabase.co/storage/v1/object/public/music/cancion.mp3"
         />
         <p className="text-xs text-gray-400 mt-1">
-          Puedes subir el MP3 a Google Drive, Dropbox o cualquier hosting y pegar el enlace directo aquí.
+          Sube el MP3 en Supabase → Storage → bucket <strong>music</strong> → copia la URL pública.
         </p>
       </div>
+
+      {url && (
+        <div className="text-xs text-gray-400">
+          Vista previa:
+          <audio controls src={url} className="w-full mt-1 h-8" />
+        </div>
+      )}
 
       <motion.button
         whileHover={{ scale: 1.02 }}

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useCallback, useMemo } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import { createClient } from '@/lib/supabase'
 
 export interface AppSettings {
@@ -18,10 +18,13 @@ export function useSettings() {
   const [settings, setSettings] = useState<AppSettings>(DEFAULTS)
   const [loading, setLoading] = useState(true)
 
-  const fetchSettings = useCallback(async () => {
-    try {
-      const { data } = await supabase.from('settings').select('*')
-      if (data) {
+  useEffect(() => {
+    let mounted = true
+    supabase
+      .from('settings')
+      .select('key, value')
+      .then(({ data }) => {
+        if (!mounted || !data) return
         const map: Record<string, string> = {}
         data.forEach((row: { key: string; value: string }) => {
           map[row.key] = row.value
@@ -30,24 +33,22 @@ export function useSettings() {
           song_url: map['song_url'] ?? '',
           song_title: map['song_title'] ?? 'Nuestra canción',
         })
-      }
-    } catch {
-      // settings table may not exist yet
-    } finally {
-      setLoading(false)
-    }
+      })
+      .catch(() => {})
+      .finally(() => { if (mounted) setLoading(false) })
+    return () => { mounted = false }
   }, [supabase])
 
-  useEffect(() => {
-    fetchSettings()
-  }, [fetchSettings])
-
-  const saveSetting = async (key: keyof AppSettings, value: string) => {
-    await supabase
-      .from('settings')
-      .upsert({ key, value, updated_at: new Date().toISOString() }, { onConflict: 'key' })
-    await fetchSettings()
+  const saveMusic = async (song_url: string, song_title: string) => {
+    await supabase.from('settings').upsert(
+      [
+        { key: 'song_url', value: song_url },
+        { key: 'song_title', value: song_title },
+      ],
+      { onConflict: 'key' }
+    )
+    setSettings({ song_url, song_title })
   }
 
-  return { settings, loading, saveSetting }
+  return { settings, loading, saveMusic }
 }

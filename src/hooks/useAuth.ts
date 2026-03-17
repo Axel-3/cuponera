@@ -50,8 +50,8 @@ export function useAuth() {
       async (event, session) => {
         if (!mounted) return
 
-        // Session expired or token refresh failed → redirect to login
-        if (event === 'SIGNED_OUT' || event === 'TOKEN_REFRESH_FAILED') {
+        // Session ended → redirect to login
+        if (event === 'SIGNED_OUT') {
           window.location.href = '/login'
           return
         }

@@ -34,11 +34,26 @@ export function useCoupons() {
 
   const fetchCoupons = useCallback(async () => {
     setLoading(true)
+    // Timeout: if Supabase hangs (expired session), stop loading after 8s
+    const timeout = setTimeout(() => {
+      setLoading(false)
+    }, 8000)
+
     try {
       const { data, error } = await supabase
         .from('coupons')
         .select('*')
         .order('created_at', { ascending: true })
+
+      clearTimeout(timeout)
+
+      if (error) {
+        // Auth error → session expired, redirect to login
+        if (error.code === 'PGRST301' || error.message?.includes('JWT')) {
+          window.location.href = '/login'
+          return
+        }
+      }
 
       if (!error && data) {
         const withColors = data.map((c, i) => ({
@@ -48,7 +63,7 @@ export function useCoupons() {
         setCoupons(withColors)
       }
     } catch {
-      // connection error
+      clearTimeout(timeout)
     } finally {
       setLoading(false)
     }

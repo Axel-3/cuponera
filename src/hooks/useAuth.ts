@@ -24,7 +24,7 @@ export function useAuth() {
         setRole(data.role ?? 'user')
       }
     } catch {
-      // profile not found, keep default role 'user'
+      // profile not found, keep default role
     }
   }
 
@@ -38,7 +38,7 @@ export function useAuth() {
         setUser(user)
         if (user) await fetchProfile(user.id)
       } catch {
-        // connection error, stay as guest
+        // connection error
       } finally {
         if (mounted) setLoading(false)
       }
@@ -47,8 +47,15 @@ export function useAuth() {
     init()
 
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      async (_, session) => {
+      async (event, session) => {
         if (!mounted) return
+
+        // Session expired or token refresh failed → redirect to login
+        if (event === 'SIGNED_OUT' || event === 'TOKEN_REFRESH_FAILED') {
+          window.location.href = '/login'
+          return
+        }
+
         setUser(session?.user ?? null)
         if (session?.user) {
           await fetchProfile(session.user.id)

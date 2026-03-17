@@ -20,10 +20,9 @@ export function useSettings() {
 
   useEffect(() => {
     let mounted = true
-    supabase
-      .from('settings')
-      .select('key, value')
-      .then(({ data }) => {
+    const load = async () => {
+      try {
+        const { data } = await supabase.from('settings').select('key, value')
         if (!mounted || !data) return
         const map: Record<string, string> = {}
         data.forEach((row: { key: string; value: string }) => {
@@ -33,9 +32,13 @@ export function useSettings() {
           song_url: map['song_url'] ?? '',
           song_title: map['song_title'] ?? 'Nuestra canción',
         })
-      })
-      .catch(() => {})
-      .finally(() => { if (mounted) setLoading(false) })
+      } catch {
+        // settings table may not exist yet
+      } finally {
+        if (mounted) setLoading(false)
+      }
+    }
+    load()
     return () => { mounted = false }
   }, [supabase])
 

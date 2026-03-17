@@ -24,7 +24,7 @@ export function useAuth() {
         setRole(data.role ?? 'user')
       }
     } catch {
-      // profile not found, keep default role
+      //
     }
   }
 
@@ -38,7 +38,7 @@ export function useAuth() {
         setUser(user)
         if (user) await fetchProfile(user.id)
       } catch {
-        // connection error
+        //
       } finally {
         if (mounted) setLoading(false)
       }
@@ -49,13 +49,10 @@ export function useAuth() {
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       async (event, session) => {
         if (!mounted) return
-
-        // Session ended → redirect to login
         if (event === 'SIGNED_OUT') {
           window.location.href = '/login'
           return
         }
-
         setUser(session?.user ?? null)
         if (session?.user) {
           await fetchProfile(session.user.id)

@@ -4,20 +4,19 @@ import { useState, useEffect, useCallback, useMemo } from 'react'
 import { createClient } from '@/lib/supabase'
 import { Coupon } from '@/types'
 
-// Romantic pastel palette
 const COUPON_COLORS = [
-  '#FFB3C6', // Rose pink
-  '#FFCCD5', // Blush
-  '#FFC8DD', // Flamingo
-  '#FFAFCC', // Hot pink light
-  '#F4ACB7', // Dusty rose
-  '#E8A0BF', // Mauve pink
-  '#F7C5D5', // Ballet pink
-  '#FADADD', // Pearl pink
-  '#FFD6E0', // Baby pink
-  '#F9C6CF', // Salmon pink
-  '#EFC3CF', // Antique rose
-  '#FAB8C4', // Carnation
+  '#FFB3C6',
+  '#FFCCD5',
+  '#FFC8DD',
+  '#FFAFCC',
+  '#F4ACB7',
+  '#E8A0BF',
+  '#F7C5D5',
+  '#FADADD',
+  '#FFD6E0',
+  '#F9C6CF',
+  '#EFC3CF',
+  '#FAB8C4',
 ]
 
 type CreateInput = {
@@ -34,10 +33,7 @@ export function useCoupons() {
 
   const fetchCoupons = useCallback(async () => {
     setLoading(true)
-    // Timeout: if Supabase hangs (expired session), stop loading after 8s
-    const timeout = setTimeout(() => {
-      setLoading(false)
-    }, 8000)
+    const timeout = setTimeout(() => setLoading(false), 8000)
 
     try {
       const { data, error } = await supabase
@@ -48,7 +44,6 @@ export function useCoupons() {
       clearTimeout(timeout)
 
       if (error) {
-        // Auth error → session expired, redirect to login
         if (error.code === 'PGRST301' || error.message?.includes('JWT')) {
           window.location.href = '/login'
           return

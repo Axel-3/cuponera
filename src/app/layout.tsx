@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import SessionKeepAlive from '@/components/SessionKeepAlive'
 
 export const metadata: Metadata = {
   title: 'Cuponera 💌',
@@ -19,7 +20,10 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="h-full bg-gray-50 font-body">{children}</body>
+      <body className="h-full bg-gray-50 font-body">
+        <SessionKeepAlive />
+        {children}
+      </body>
     </html>
   )
 }

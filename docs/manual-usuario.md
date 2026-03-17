@@ -246,4 +246,4 @@ El archivo `index.html` original permanece disponible para quienes deseen **impr
 
 ---
 
-*Documentación generada para Cuponera v1.0.0 — Marzo 2026*
+*Cuponera v1.0.0 — 2026*

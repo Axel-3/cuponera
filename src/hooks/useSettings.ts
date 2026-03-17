@@ -33,7 +33,7 @@ export function useSettings() {
           song_title: map['song_title'] ?? 'Nuestra canción',
         })
       } catch {
-        // settings table may not exist yet
+        //
       } finally {
         if (mounted) setLoading(false)
       }
